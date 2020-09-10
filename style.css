@@ -1,0 +1,368 @@
+*{
+    color: white;
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    font-size: 16px;
+}
+.blackout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .1);
+    z-index: 1;
+}
+body{
+    /* cursor:  none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.preloader{
+    position: fixed;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    height: 128%;
+    z-index: 9999999999999;
+    transform: skewY(-4deg);
+    background: #161616;
+    transition: .4s;
+}
+.preloader svg{
+    animation: pulse 2s infinite;
+    transition: .2s;
+}
+@keyframes pulse{
+    from {opacity: 1;}
+    50% {opacity: .5;}
+    to {opacity: 1;}
+}
+.preloader div{
+    transform: skewY(2deg) translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+nav, .priv, footer{
+    padding: 40px;
+}
+.priv, .p_right .arrow .right, .p_right .social{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+.p_right{
+    z-index: 2;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    bottom: 20px;
+}
+
+.background{
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.p_right .arrow{
+    z-index: 2;
+    height: 51%;
+}
+.p_right .arrow .right{
+    height: fit-content;
+}
+.p_right .social{
+    height: fit-content;
+    padding: 15px 0 0 20px;
+}
+.container_social{
+    z-index: 2;
+    display: flex;
+    height: 49%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.background footer, .background .priv{
+    z-index: 2;
+    height: 50%;
+}
+
+.background > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.background > div{
+    flex: 0 0 auto;
+    transition: .3s;
+    position: relative;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+nav{
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    
+}
+nav ul li:not(:first-child){
+    margin-left: 55px;
+}
+.priv{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.priv .left{
+    margin-bottom: -60px;
+    position: relative;
+}
+.priv .left p{
+    font-size: 110px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: rgba(255,255,255, .5);
+}
+.priv .right{
+    display: flex;
+    margin-bottom: 25px;
+}
+.prev, .next, .social li{
+    width: 60px;
+    height: 60px;
+    /* text-align: center; */
+    /* padding-top: 4px; */
+    /* background: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow > div{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    justify-content: flex-end;
+}
+.arrow .right{
+    padding: 30px 0 10px 30px;
+}
+/* .arrow .next, .social li:not(:first-child){
+    margin-left: 45px;
+} */
+.priv .right li:first-child{
+    margin-right: 30px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+footer .right{
+    display: flex;
+}
+footer .right li:not(:last-child){
+    margin-right: 15px;
+}
+.footer li:not(:last-child){
+    margin-bottom: 17px;
+}
+.progress_header {
+    width: fit-content;
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.play_video{
+    position: absolute;
+    z-index: 9;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.progress_header__second {
+    color: #ffffff !important;
+    white-space: nowrap;
+    position: absolute;
+    top: 19px;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+    transition: width 1s ease-out 0s;
+}
+.autop{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.progress_header__second {
+    width: 1%;
+}
+footer.video_view{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+header.video_view, footer.video_view{
+    z-index: 5;
+}
+header.video_view{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+.mute{
+    display: flex;
+    position: relative;
+    width: 30px;
+}
+.mute div:not(:last-child){
+    margin-right: 4px;
+}
+.mute div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
+    z-index: -1;
+}
+.mute div:first-child{
+    left: auto;
+    right: 0px;
+}
+.mute div:nth-child(2){
+    left: auto;
+    right: 7px;
+}
+.mute div:nth-child(3){
+    left: auto;
+    right: 14px;
+}
+.mute div:nth-child(4){
+    left: auto;
+    right: 25px;
+}
+
+.mute div.paused:first-child{
+    height: 10px;
+}
+.mute div.paused:nth-child(2){
+    height: 7px;
+}
+.mute div.paused:nth-child(3){
+    height: 15px;
+}
+.mute div.paused:nth-child(4){
+    height: 6px;
+}
+.mute.on div:first-child{
+    left: auto;
+    right: 0px;
+    animation: first 1s infinite ease-in-out;
+}
+.mute.on div:nth-child(2){
+    left: auto;
+    right: 7px;
+    animation: first 1s infinite ease-in-out;
+    animation-delay: .3s;
+}
+.mute.on div:nth-child(3){
+    animation: first 1s infinite ease-in-out;
+    animation-delay: .1s;
+    left: auto;
+    right: 14px;
+}
+.mute.on div:nth-child(4){
+    left: auto;
+    right: 25px;
+    animation: first 1s infinite ease-in-out;
+    animation-delay: .4s;
+}
+@keyframes first { 
+    from {height: 15px;}
+    50% {height: 5px;}
+    to {height: 15px;}
+}
+.timeline{
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline .progress_header__first{
+    background: rgba(0,0,0, .2);
+    height: 2px;
+    z-index: 5;
+    width: 100%;
+    border: none;
+}
+.timeline .progress_header__second{
+    overflow: inherit !important;
+    width: 100%;
+    border: none;
+}
+/* body > footer > div.timeline.not-video > input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4CAF50;
+
+}
+
+body > footer > div.timeline.not-video > input::-moz-range-thumb {
+
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+} */
+
+.timeline .progress_header__second span{
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    z-index: 9;
+    transform: translate(100%, -4px);
+}
+.back, footer.video_view{
+    transition: .4s;
+}
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}

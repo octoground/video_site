@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"></script>
+        <script src="cursor/cursor.js"></script>
+        <script src="site.js"></script>
+        <link rel="stylesheet" href="roboto/roboto.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="cursor/cursor.css">
+        <!-- <link rel="stylesheet" href="range/range.scss"> -->
+    </head>
+    <script>
+    window.addEventListener('click', function(e){
+        if (!$(e.target).hasClass('mute')) {
+            $('.cursor').removeClass('none_play');
+        
+            if ($('video')[0].paused) {  // если видео остановлено, запускаем
+                $('video')[0].play();
+
+                $('.cursor').removeClass('play');
+                $('.cursor').addClass('stop');
+
+            } else {
+                $('video')[0].pause();
+
+                $('.cursor').removeClass('stop');
+                $('.cursor').addClass('play');
+                // $('.cursor').removeClass('none_play');
+            }
+
+        }
+    }, false);
+    </script>
+    <body class="video_v">
+        <div class="preloader">
+            <div>
+                <div class="progress_header__first not-video not-video">
+                    <svg width="200" height="44" viewBox="0 0 200 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40.0605 44L36.534 35.2978H11.7985L8.27204 44H0L18.3778 0H29.9446L48.3627 44H40.0605ZM13.4811 31.1227H34.7708L24.1814 5.02578L13.4811 31.1227Z" fill="white"/>
+                    <path d="M97.0881 37.6347V26.1067C97.1305 25.794 97.1077 25.4762 97.0211 25.1722C96.9346 24.8682 96.7861 24.5842 96.5843 24.3369C95.9438 23.9795 95.2029 23.8289 94.4685 23.9067H70.3879C65.9345 23.9067 63.7078 22.0456 63.7078 18.3236V5.61244C63.7078 1.87081 65.9345 0 70.3879 0H105.219V4.17511H75.6272C74.8842 4.08959 74.132 4.22604 73.471 4.56622C73.1586 4.82044 73.0075 5.42667 73.0075 6.36533V17.5413C73.0075 18.5191 73.1586 19.0862 73.471 19.3502C74.1336 19.6858 74.8843 19.8219 75.6272 19.7413H99.6171C104.07 19.7413 106.297 21.6024 106.297 25.3244V38.4071C106.297 42.1422 104.07 44.0065 99.6171 44H65.2695V39.8249H94.4886C95.2182 39.9 95.9544 39.7639 96.6045 39.4338C96.9168 39.1796 97.0881 38.5733 97.0881 37.6347Z" fill="white"/>
+                    <path d="M129.733 0H138.307V44H129.733V0Z" fill="white"/>
+                    <path d="M160.091 0H193.955C197.985 0 200 1.8643 200 5.59289V38.4071C200 42.1422 197.985 44 193.955 44H160.091V0ZM191.496 37.6347V6.34578C191.584 5.71616 191.433 5.07709 191.073 4.54667C190.489 4.20748 189.803 4.06967 189.128 4.15556H168.524V39.8249H189.128C189.803 39.9108 190.489 39.773 191.073 39.4338C191.433 38.9034 191.584 38.2643 191.496 37.6347Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="progress_header__second not-video not-video" style="fill: aquamarine;">
+                    <svg width="200" height="44" viewBox="0 0 200 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40.0605 44L36.534 35.2978H11.7985L8.27204 44H0L18.3778 0H29.9446L48.3627 44H40.0605ZM13.4811 31.1227H34.7708L24.1814 5.02578L13.4811 31.1227Z"/>
+                    <path d="M97.0881 37.6347V26.1067C97.1305 25.794 97.1077 25.4762 97.0211 25.1722C96.9346 24.8682 96.7861 24.5842 96.5843 24.3369C95.9438 23.9795 95.2029 23.8289 94.4685 23.9067H70.3879C65.9345 23.9067 63.7078 22.0456 63.7078 18.3236V5.61244C63.7078 1.87081 65.9345 0 70.3879 0H105.219V4.17511H75.6272C74.8842 4.08959 74.132 4.22604 73.471 4.56622C73.1586 4.82044 73.0075 5.42667 73.0075 6.36533V17.5413C73.0075 18.5191 73.1586 19.0862 73.471 19.3502C74.1336 19.6858 74.8843 19.8219 75.6272 19.7413H99.6171C104.07 19.7413 106.297 21.6024 106.297 25.3244V38.4071C106.297 42.1422 104.07 44.0065 99.6171 44H65.2695V39.8249H94.4886C95.2182 39.9 95.9544 39.7639 96.6045 39.4338C96.9168 39.1796 97.0881 38.5733 97.0881 37.6347Z"/>
+                    <path d="M129.733 0H138.307V44H129.733V0Z"/>
+                    <path d="M160.091 0H193.955C197.985 0 200 1.8643 200 5.59289V38.4071C200 42.1422 197.985 44 193.955 44H160.091V0ZM191.496 37.6347V6.34578C191.584 5.71616 191.433 5.07709 191.073 4.54667C190.489 4.20748 189.803 4.06967 189.128 4.15556H168.524V39.8249H189.128C189.803 39.9108 190.489 39.773 191.073 39.4338C191.433 38.9034 191.584 38.2643 191.496 37.6347Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <header class="video_view not-video">
+            <a href="index.html" class="back not-video link">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="18.6569" y="5.92896" width="2" height="18" transform="rotate(45 18.6569 5.92896)" fill="white"/>
+                <rect x="20.071" y="18.6569" width="2" height="18" transform="rotate(135 20.071 18.6569)" fill="white"/>
+                </svg>
+            </a>
+            <div class="mute not-video link on">
+                <div class="link not-video"></div>
+                <div class="link not-video"></div>
+                <div class="link not-video"></div>
+                <div class="link not-video"></div>
+            </div>
+        </header>
+        <footer class="video_view not-video">
+            <div class="timeline not-video">
+                <!-- <input class="progress_header__first not-video not-video link" type="range" min="1" max="100" value="95"> -->
+                <div class="progress_header__first not-video not-video link" type="range" min="1" max="100" value="95"></div>
+                <div class="progress_header__second not-video not-video link" style="height: 2px; top: 0; background: white"><span></span></div>
+
+                <!-- <div class="slidecontainer"> -->
+                    <!-- <input type="range" min="1" max="100" value="50" class="slider" id="myRange"> -->
+                  <!-- </div>  -->
+
+
+                  
+            </div>
+            <div class="time not-video">
+                <span class="current not-video"></span> / <span class="duration not-video"></span>
+            </div>
+        </footer>
+        <div class="blackout not-video"></div>
+        <!-- <video src="video/the_rise_Trim.mp4" autoplay="true" class="not-video"></video> -->
+        <!-- <video src="video/the_rise_Trim.mp4" class="not-video"></video> -->
+
+        <video width="500" height="600" autoplay="true" loop="true" data-preview="images/test.jpg"> 
+            <source src="video/the_rise_Trim.mp4" type="video/mp4" />
+            <source src="video/the_rise_Trim.ogv" type="video/ogg" />
+            <source src="video/the_rise_Trim.webm" type="video/webm" />
+        </video>   
+
+        <div class="cursor stop"></div>    
+    </body>
+</html>
